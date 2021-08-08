@@ -1,4 +1,3 @@
-# UI for fortnite bot (no scripts here just ui lol)
 
 import os, time,ctypes, requests,json, base64, shutil
 from colorama import Fore
@@ -147,7 +146,24 @@ except:
           r = requests.post(f"https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/game/v2/profile/{acstid}/client/SetReceiveGiftsEnabled?profileId=common_core",data=data,headers=headers)
           input(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Done! press ENTER to go back...")
     elif opt == "2":
-      print()
+      os.system("clear || cls")
+      print(mural)
+      print(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Current module : Save The World")
+      print(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Please Select An Option:")
+      print(f"[{Fore.MAGENTA}1{Fore.RESET}] Claim daily login reward.")
+      opt = input(f"\n[{Fore.MAGENTA}?{Fore.RESET}] ")
+      if opt == "1":#
+        h = {
+        "Content-Type": "application/json",
+        "Authorization": "bearer "+acstkn
+        }
+        r = requests.post(f"https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/game/v2/profile/{acstid}/client/ClaimLoginReward?profileId=campaign",data="{}",headers=h)
+        try:
+          r.json()['errorCode']
+          input(f"\n[{Fore.MAGENTA}!{Fore.RESET}] ERROR ({r.json()}) \npress ENTER to go back...")
+        except:
+          print(f"\n[{Fore.MAGENTA}+{Fore.RESET}] currently doesnt display the item claimed, will fix in future.")
+          input(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Done! press ENTER to go back...")
     elif opt == "3":
       # EPIC
       os.system("clear || cls")
