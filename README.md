@@ -6,3 +6,7 @@ Just download FortniteAIO.py and run it. All files and options will be explained
 
 # Token Refresher
 run autorefresher.py and keep it open, use after already logged in.
+
+# Discord
+invite : https://discord.gg/BtZg2BuSDD
+dm englesh#0001 if anything doesnt work
