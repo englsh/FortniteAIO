@@ -28,7 +28,6 @@ def main():
     hasLoggedin = False
     print(f"{Fore.RESET}[{Fore.MAGENTA}+{Fore.RESET}] to login, goto 'https://www.epicgames.com/id/login?redirectUrl=https%3A%2F%2Fwww.epicgames.com%2Fid%2Fapi%2Fredirect%3FclientId%3D3446cd72694c4a4485d81b77adbb2141%26responseType%3Dcode%0A'\n")
     print(f"[{Fore.MAGENTA}+{Fore.RESET}] Please enter the code after the '?code=' part ")
-    os.mkdir(os.path.expandvars("%localappdata%")+"/FortniteAIO")
     code = input(f"\n[{Fore.MAGENTA}!{Fore.RESET}] ")
     
 
@@ -47,6 +46,7 @@ def main():
     acstkn = authreq.json()['access_token']
     acstid = authreq.json()['account_id']
     acstnm = authreq.json()['displayName']
+    os.mkdir(os.path.expandvars("%localappdata%")+"/FortniteAIO")
     json1 = '{'+f'"access_token":"{base64.b64encode(acstkn.encode()).decode("utf-8")}","account_id":"{acstid}","account_name":"{acstnm}"'+"}"
     c11 = open(os.path.expandvars("%localappdata%")+"/FortniteAIO/token.json","w")
     c11.write(json1)
@@ -65,9 +65,7 @@ def main():
         input(f"[{Fore.MAGENTA}!{Fore.RESET}] Press ENTER to close...")
         shutil.rmtree(os.path.expandvars("%localappdata%")+"/FortniteAIO")
         exit()
-    except Exception as e:
-      print(e)
-      input()
+    except:
       pass
   os.system("clear || cls")
   print(mural)
@@ -157,7 +155,8 @@ def main():
         print(mural)
         print(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Current module : Save The World")
         print(f"\n[{Fore.MAGENTA}+{Fore.RESET}] Please Select An Option:")
-        print(f"[{Fore.MAGENTA}1{Fore.RESET}] Claim daily login reward.")
+        print(f"[{Fore.MAGENTA}1{Fore.RESET}] Claim daily login reward")
+        print(f"[{Fore.MAGENTA}2{Fore.RESET}] Back")
         opt = input(f"\n[{Fore.MAGENTA}?{Fore.RESET}] ")
         if opt == "1":#
           h = {
