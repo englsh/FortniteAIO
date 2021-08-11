@@ -1,4 +1,3 @@
-# UI for fortnite bot (no scripts here just ui lol)
 def main():
   import os, time,ctypes, requests,json, base64, shutil
   from colorama import Fore
