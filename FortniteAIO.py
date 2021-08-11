@@ -1,4 +1,4 @@
-
+# UI for fortnite bot (no scripts here just ui lol)
 def main():
   import os, time,ctypes, requests,json, base64, shutil
   from colorama import Fore
@@ -49,9 +49,13 @@ def main():
     acstid = authreq.json()['account_id']
     acstnm = authreq.json()['displayName']
     json1 = '{'+f'"access_token":"{base64.b64encode(acstkn.encode()).decode("utf-8")}","account_id":"{acstid}","account_name":"{acstnm}"'+"}"
-    open(os.path.expandvars("%localappdata%")+"/FortniteAIO/token.json","w").write(json1)
+    c11 = open(os.path.expandvars("%localappdata%")+"/FortniteAIO/token.json","w")
+    c11.write(json1)
+    c11.close()
   else:
-    aaaaaaaaaaaaa = json.loads(open(os.path.expandvars("%localappdata%")+"/FortniteAIO/token.json","r").read())
+    c11=open(os.path.expandvars("%localappdata%")+"/FortniteAIO/token.json","r")
+    aaaaaaaaaaaaa = json.loads(c11.read())
+    c11.close()
     acstkn = base64.b64decode(aaaaaaaaaaaaa['access_token'].encode()).decode('utf-8')
     acstid = aaaaaaaaaaaaa['account_id']
     acstnm = aaaaaaaaaaaaa['account_name']
@@ -62,7 +66,9 @@ def main():
         input(f"[{Fore.MAGENTA}!{Fore.RESET}] Press ENTER to close...")
         shutil.rmtree(os.path.expandvars("%localappdata%")+"/FortniteAIO")
         exit()
-    except:
+    except Exception as e:
+      print(e)
+      input()
       pass
   os.system("clear || cls")
   print(mural)
